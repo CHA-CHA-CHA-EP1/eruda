@@ -8,6 +8,7 @@ import Snippets from './Snippets/Snippets'
 import Resources from './Resources/Resources'
 import Info from './Info/Info'
 import Sources from './Sources/Sources'
+import RemoteLog from './RemoteLog/RemoteLog'
 import Settings from './Settings/Settings'
 import emitter from './lib/emitter'
 import logger from './lib/logger'
@@ -96,6 +97,7 @@ export default {
   Resources,
   Info,
   Snippets,
+  RemoteLog,
   Settings,
   get(name) {
     if (!this._checkInit()) return
@@ -212,11 +214,11 @@ export default {
         evalCss.container = document.head
         evalCss(
           require('./style/icon.css') +
-            require('luna-console/luna-console.css') +
-            require('luna-object-viewer/luna-object-viewer.css') +
-            require('luna-dom-viewer/luna-dom-viewer.css') +
-            require('luna-text-viewer/luna-text-viewer.css') +
-            require('luna-notification/luna-notification.css')
+          require('luna-console/luna-console.css') +
+          require('luna-object-viewer/luna-object-viewer.css') +
+          require('luna-dom-viewer/luna-dom-viewer.css') +
+          require('luna-text-viewer/luna-text-viewer.css') +
+          require('luna-notification/luna-notification.css')
         )
 
         el = document.createElement('div')
@@ -260,18 +262,18 @@ export default {
 
     evalCss(
       require('./style/reset.scss') +
-        require('luna-object-viewer/luna-object-viewer.css') +
-        require('luna-console/luna-console.css') +
-        require('luna-notification/luna-notification.css') +
-        require('luna-data-grid/luna-data-grid.css') +
-        require('luna-dom-viewer/luna-dom-viewer.css') +
-        require('luna-modal/luna-modal.css') +
-        require('luna-tab/luna-tab.css') +
-        require('luna-text-viewer/luna-text-viewer.css') +
-        require('luna-setting/luna-setting.css') +
-        require('luna-box-model/luna-box-model.css') +
-        require('./style/style.scss') +
-        require('./style/icon.css')
+      require('luna-object-viewer/luna-object-viewer.css') +
+      require('luna-console/luna-console.css') +
+      require('luna-notification/luna-notification.css') +
+      require('luna-data-grid/luna-data-grid.css') +
+      require('luna-dom-viewer/luna-dom-viewer.css') +
+      require('luna-modal/luna-modal.css') +
+      require('luna-tab/luna-tab.css') +
+      require('luna-text-viewer/luna-text-viewer.css') +
+      require('luna-setting/luna-setting.css') +
+      require('luna-box-model/luna-box-model.css') +
+      require('./style/style.scss') +
+      require('./style/icon.css')
     )
   },
   _initEntryBtn() {
@@ -296,6 +298,7 @@ export default {
       'sources',
       'info',
       'snippets',
+      'remoteLog',
     ]
   ) {
     tool = toArr(tool)

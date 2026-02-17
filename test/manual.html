@@ -48,6 +48,15 @@
         <li>
           <a href="#" id="log-1000">Log 1000</a>
         </li>
+        <li>
+          <a href="#" id="test-file">Test File</a>
+        </li>
+        <li>
+          <a href="#" id="test-blob">Test Blob</a>
+        </li>
+        <li>
+          <a href="#" id="test-all-types">Test All Types</a>
+        </li>
       </ul>
     </nav>
     <script>
@@ -182,6 +191,65 @@
         for (var i = 0; i < 1000; i++) {
           console.log(location, i)
         }
+      })
+      addClickEvent('test-file', function () {
+        var file = new File(['Hello World Content'], 'test.txt', { type: 'text/plain' })
+        console.log('File object:', file)
+      })
+      addClickEvent('test-blob', function () {
+        var blob = new Blob(['Blob content here'], { type: 'text/plain' })
+        console.log('Blob object:', blob)
+      })
+      addClickEvent('test-all-types', function () {
+        console.log('--- Testing All Types ---')
+
+        // File
+        var file = new File(['File content'], 'example.txt', { type: 'text/plain' })
+        console.log('File:', file)
+
+        // Blob
+        var blob = new Blob(['Blob data'], { type: 'application/octet-stream' })
+        console.log('Blob:', blob)
+
+        // Error
+        var error = new Error('Test error message')
+        console.error('Error:', error)
+
+        // Nested Object
+        var obj = {
+          name: 'Test',
+          nested: { a: 1, b: { c: 2 } },
+          array: [1, 2, 3],
+          date: new Date().toISOString()
+        }
+        console.log('Object:', obj)
+
+        // Map
+        var map = new Map()
+        map.set('key1', 'value1')
+        map.set('key2', 'value2')
+        console.log('Map:', map)
+
+        // Set
+        var set = new Set([1, 2, 3, 4, 5])
+        console.log('Set:', set)
+
+        // Function
+        var fn = function testFunction() { return 'hello' }
+        console.log('Function:', fn)
+
+        // DOM Element
+        var el = document.createElement('div')
+        el.id = 'test-el'
+        el.className = 'test-class'
+        console.log('Element:', el)
+
+        // Circular reference
+        var circular = { name: 'circular' }
+        circular.self = circular
+        console.log('Circular:', circular)
+
+        console.log('--- All Tests Done ---')
       })
     </script>
     <script>

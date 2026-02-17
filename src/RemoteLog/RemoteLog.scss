@@ -1,0 +1,71 @@
+@use '../style/variable' as *;
+@use '../style/mixin' as *;
+
+#remote-log {
+  @include overflow-auto(y);
+  padding: 10px;
+
+  .section {
+    border: 1px solid var(--border);
+    margin-bottom: 10px;
+  }
+
+  .title {
+    padding: $padding;
+    color: var(--accent);
+  }
+
+  .content {
+    padding: $padding;
+  }
+
+  .input-group {
+    margin-bottom: 10px;
+  }
+
+  .url-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    border-radius: 4px;
+    font-size: $font-size-s;
+    box-sizing: border-box;
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .toggle-btn {
+    padding: 8px 16px;
+    background: var(--accent);
+    color: var(--select-foreground);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: $font-size-s;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  .status {
+    margin-top: 10px;
+    font-size: $font-size-s;
+    color: var(--foreground);
+  }
+
+  .stats {
+    margin-top: 5px;
+    font-size: $font-size-s;
+    color: var(--accent);
+  }
+}
+
+.safe-area #remote-log {
+  @include safe-area(padding-bottom, 10px);
+}
+
